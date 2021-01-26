@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .card-text{
+                font-size:14pt !important;
+            }
+
+            .card-title{
+                font-size: 28pt;
+            }
+
+            .card-subtitle{
+                font-size: 18pt;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="container">
+            <div class="row">   
+                <div class="col-md-2 col-lg-2"></div>
+                    <div class="col-md-10 col-lg-10">
+                        <div class="card" style=" text-align: center;">
+                            <div class="card-body">
+                                <p class="card-text">Tamanho do texto</p>
+                                <div class="slidecontainer">
+                                    <input type="range" min="14" max="18" value="14" class="slider" id="textSize" step="2">
+                                </div>
+                                <hr>
+                                <h5 class="card-title">Titulo do texto</h5>
+                                <h6 class="card-subtitle mb-2 text-muted ">Sub titulo do texto</h6>
+                                <p class="generic-class">Mussum Ipsum, cacilds vidis litro abertis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Atirei o pau no gatis, per gatis num morreus. Leite de capivaris, leite de mula manquis sem cabeça. Viva Forevis aptent taciti sociosqu ad litora torquent.</p>
+                                <p class="generic-class">Diuretics paradis num copo é motivis de denguis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Quem num gosta di mim que vai caçá sua turmis! Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. </p>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-2 col-lg-2"></div>
+            </div>
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        let rangeBar = document.getElementById('textSize')
+
+        rangeBar.addEventListener('change', () => {
+            let texts = document.getElementsByClassName('generic-class')
+            for (const [key, value] of Object.entries(texts)) {
+                texts[key].style.fontSize = `${rangeBar.value}pt`;
+            }
+            
+        });
+
+    </script>
+</html>
